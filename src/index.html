@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#e9b35b" />
+    <meta name="description" content="Guide sunlight across Lagos rooftops as your start.ng character in Eko Beacon, a 3D mirror-routing puzzle." />
+    <title>Eko Beacon — Rooftop Signal Puzzles</title>
+  </head>
+  <body>
+    <main id="game-shell" aria-label="Eko Beacon rooftop puzzle">
+      <div id="scene" aria-hidden="true"></div>
+      <div class="topbar">
+        <div class="brand"><span class="brand-mark">EB</span><span>EKO <b>BEACON</b></span></div>
+        <div class="player-chip"><span class="avatar-dot" id="avatar-dot">G</span><span><b id="player-name">Guest</b><small id="player-account">Playing as guest</small></span><a id="sign-in" class="sign-in" href="#" hidden>Sign in</a></div>
+      </div>
+      <div class="hud" id="hud" hidden>
+        <div class="hud-card"><small>ROOFTOP</small><b><span id="level">1</span><i>/ 3</i></b></div>
+        <div class="hud-card"><small>MIRROR TURNS</small><b><span id="moves">0</span><i>↻</i></b></div>
+        <div class="hud-card"><small>SOLVE TIME</small><b><span id="time">0:00</span></b></div>
+      </div>
+      <section class="panel intro-panel" id="intro-panel">
+        <div class="eyebrow"><span class="pulse"></span> A ROOFTOP PUZZLE</div>
+        <h1>Light the<br><em>way home.</em></h1>
+        <p class="intro-copy">Send the gold light from the glowing source to the beacon. Turn the teal mirrors to change its path.</p>
+        <div class="how-to-play" aria-label="How to play">
+          <div class="guide-row"><span class="guide-icon source-icon">●</span><span><b>Glowing dot</b> is where the light starts.</span></div>
+          <div class="guide-row"><span class="guide-icon beam-icon">━</span><span><b>Gold line</b> shows where the light travels.</span></div>
+          <div class="guide-row"><span class="guide-icon mirror-icon">／</span><span><b>Teal mirror</b> turns the light when you rotate it.</span></div>
+          <div class="guide-row"><span class="guide-icon beacon-icon">✦</span><span><b>Beacon</b> is the glowing target. Light it to win.</span></div>
+        </div>
+        <p class="first-move"><b>First roof tip:</b> tap the mirror in the middle once. The light should go up, then right.</p>
+        <button class="primary-button" id="play-button">START PUZZLE <span>↗</span></button>
+        <div class="panel-foot"><span>PHONE: TAP A MIRROR</span> keyboard: arrows select, Space turns</div>
+      </section>
+      <section class="panel result-panel" id="result-panel" hidden>
+        <div class="eyebrow"><span class="result-icon">✦</span> <span id="result-eyebrow">SIGNAL ALIGNED</span></div>
+        <h2 id="result-heading">Beacon<br><em>lit.</em></h2>
+        <div class="results"><div><small>ROOFS LIT</small><b><span id="final-levels">1</span><i>/ 3</i></b></div><div><small>SOLVE TIME</small><b><span id="final-time">0:00</span></b></div></div>
+        <p class="save-message" id="save-message">A clean route.</p>
+        <button class="primary-button" id="continue-button">NEXT ROOF <span>↗</span></button>
+      </section>
+      <aside class="board" aria-live="polite">
+        <div class="board-title"><span>BEACON KEEPERS</span><small>BEST ROUTES</small></div>
+        <ol id="leaderboard"><li class="empty-board">Finding the first signal…</li></ol>
+      </aside>
+      <div class="puzzle-controls" id="puzzle-controls" hidden aria-label="Mirror controls">
+        <button id="select-prev" aria-label="Select previous mirror">←</button>
+        <button id="rotate-button" class="rotate-button">ROTATE MIRROR <span>↻</span></button>
+        <button id="select-next" aria-label="Select next mirror">→</button>
+      </div>
+      <div class="play-tip" id="play-tip" hidden aria-live="polite">Follow the gold light. Tap a teal mirror to turn it. <b>First roof: tap the middle mirror once.</b></div>
+      <div class="toast" id="toast" aria-live="polite" hidden></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "leaderboard": {
+    "stats": [
+      { "key": "levels", "label": "Roofs lit", "order": "highest" },
+      { "key": "time", "label": "Solve time", "order": "lowest", "format": "time" }
+    ]
+  }
+}
